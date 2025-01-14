@@ -1,18 +1,40 @@
-import React , {useState} from 'react';
+import React , {useState , useEffect} from 'react';
 import './index.scss';
 import './fixed.scss';
 
 function Header() {
+  const [scrolledDown, setScrolledDown] = useState(false);  
   const [isActive, setIsActive] = useState(false);
-  
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+
+  const handleWheel = (e) => {
+    if (e.deltaY > 0) {
+      setScrolledDown(true);
+    } else {
+      setScrolledDown(false);
+    }
+  };
+  useEffect(() => {
+    const maouse = document.querySelector('.mouse');
+    if (maouse) {
+      window.addEventListener('wheel', handleWheel);
+
+      return () => {
+        window.removeEventListener('wheel', handleWheel);
+      };
+    }
+  }, []);
+
   const toggleOpen = () => {
     setIsActive(!isActive);
   };
-
+  const handleMouseMove = (e) => {
+    setCursorPosition({ x: e.clientX, y: e.clientY });
+  };
   return (
     <>
       <div className="header">
-        <svg className="path" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 435.7 119.5" width="94">
+        <svg className={`path mouse ${scrolledDown ? 'scrolled-down' : ''}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 435.7 119.5" width="94">
           <path
             className="path-animation p1"
             style={{ strokeMiterlimit: 10, transition: 'none', opacity: 1 }}
@@ -37,7 +59,7 @@ function Header() {
             <p>COPYRIGHT c 2024 FLEX</p>
           </div>
         </div>
-        <button className={`open-side ${isActive ? 'active' : ''}`} onClick={toggleOpen}>
+        <button className={`open-side mouse ${isActive ? 'active' : '' , scrolledDown ? 'scrolled-down' : '' }`} onClick={toggleOpen}>
           <img className="os1 os" src="./image/vector1.png" alt="-" />
           <img className="os2 os" src="./image/vector2.png" alt="x" />
         </button>
@@ -55,6 +77,30 @@ function Header() {
           <button>JOIN</button>
         </div>
       </div>
+      <button className='left-fixed'>
+        <p className='w'>W.</p>
+        <p className='home'>Home</p>
+      </button>
+      <button
+        className={`rignt-fixed mouse ${scrolledDown ? 'scrolled-down' : ''}`}        
+        onMouseMove={handleMouseMove}
+      >
+        <div className="circle"></div>
+        
+          <div
+            className="custom-cursor"
+            style={{
+              top: cursorPosition.y,
+              left: cursorPosition.x,
+            }}
+          >
+            <p>이번달 작업가능 건수</p>
+            <p>
+              <span>001건</span> (01/05)
+            </p>
+          </div>
+        
+      </button>
     </>    
   );
 }
