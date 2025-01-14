@@ -132,6 +132,12 @@
   transform: translateX(200px);
   transition: transform 1s ease-in-out;  
   gap: 11px;
+  button {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: transform 0.5s ease-in-out , opacity 0.5s ease-in-out;
+    transition-delay: 5s;
+  }
   button.nav {
     font-size: 18px;
     color: black;
@@ -169,6 +175,10 @@
   }
   &.active {
     transform: translateX(0px);
+    button {
+      opacity: 1;
+      transform: translateX(0px);
+    }
   }
 }
 .left-fixed {

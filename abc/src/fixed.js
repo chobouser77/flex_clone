@@ -65,13 +65,13 @@ function Header() {
         </button>
       </div>
       <div className={`side-menu ${isActive ? 'active' : ''}`}>
-        <button className='home nav'>Home</button>
-        <button className='nav'>ABOUT</button>
-        <button className='nav'>PROJECTS</button>
-        <button className='nav'>CONTACT</button>
-        <button className='nav'>CLASS</button>
-        <button className='bottom nav'>DEVELOPER</button>
-        <button className='bottom nav'>DESIGNER</button>
+        <button className='home nav 1'>Home</button>
+        <button className='nav 2'>ABOUT</button>
+        <button className='nav 3'>PROJECTS</button>
+        <button className='nav 4'>CONTACT</button>
+        <button className='nav 5 '>CLASS</button>
+        <button className='bottom nav 6'>DEVELOPER</button>
+        <button className='bottom nav 7'>DESIGNER</button>
         <div className="login">
           <button>LOGIN</button>
           <button>JOIN</button>
