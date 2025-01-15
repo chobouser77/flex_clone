@@ -208,6 +208,7 @@
 .rignt-fixed {
   position: fixed; bottom: 30px; right: 30px;
   display: flex;
+  z-index: 40;
   width: 130px; height: 130px;
   align-items: center; justify-content: center;
   background-color: #33333300;
