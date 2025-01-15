@@ -131,30 +131,30 @@
   align-items: flex-end;
   transform: translateX(200px);
   transition: transform 1s ease-in-out;  
-  gap: 11px;
-  button {
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: transform 0.5s ease-in-out , opacity 0.5s ease-in-out;
-    transition-delay: 5s;
-  }
+  gap: 11px;  
   button.nav {
+    opacity: 0;
+    transform: translateY(-30px);    
     font-size: 18px;
     color: black;
-    transition: color 0.3s;
+    transition: color 0.3s 0s, transform 0.5s 1s , opacity 0.5s 1s;
     font-weight: 500;
     &:hover {
       color: #3EFF3E;
     }
     &.home {
-      color: #3EFF3E;
+      color: #3EFF3E;      
       &:hover {
         color: #000;
       }
     }
+    &.no {
+      transition: color 0.3s 0s, transform 0.5s 1.2s , opacity 0.5s 1.2s;
+    }
     &.bottom {
       color: #00000050;
       font-size: 14px;
+      transition: color 0.3s 0s, transform 0.5s 1.4s , opacity 0.5s 1.4s;
       &:hover {
         color: #3EFF3E;
       }
@@ -175,9 +175,9 @@
   }
   &.active {
     transform: translateX(0px);
-    button {
+    button {      
       opacity: 1;
-      transform: translateX(0px);
+      transform: translateY(0px);
     }
   }
 }
