@@ -1,3 +1,4 @@
+import { reportWebVitals } from 'web-vitals'
 import './index.scss';
 import './App.css';
 import Header from './fixed';
