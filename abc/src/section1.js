@@ -42,23 +42,23 @@ function Section1() {
     const shapes = [
       Matter.Bodies.rectangle(window.innerWidth * 0.25, 100, 300, 500, { 
         render: { fillStyle: "#FF6347" },
-        angle: getRandom(0.1, 0.5),
+        angle: getRandom(0.1, 1),
         velocity: { 
-          x: getRandom(0.2, 1), 
+          x: getRandom(0.2, 2), 
           y: getRandom(0,10) },
       }), 
       Matter.Bodies.circle(window.innerWidth * 0.5, 50, 200, {
         render: { fillStyle: "#4682B4" },
-        angle: getRandom(0.1, 0.5),
+        angle: getRandom(0.1, 1),
         velocity: { 
-          x: getRandom(0.2, 1.2), 
+          x: getRandom(0.2, 2.4), 
           y: getRandom(0,8) },
       }), // 원
       Matter.Bodies.polygon(window.innerWidth * 0.75, 70, 5, 300, {
         render: { fillStyle: "#32CD32" },
-        angle: getRandom(0.1, 0.5),
+        angle: getRandom(0.1, 1),
         velocity: { 
-          x: getRandom(0.2, 1.6), 
+          x: getRandom(0.2, 3.2), 
           y: getRandom(0,10) },
       }),
     ];

@@ -126,7 +126,7 @@ function Section2() {
             fill="transparent"
             stroke="#3EFF3E"
             strokeWidth="10"
-            trokeLinecap="round"
+            strokeLinecap="round"
           />
         </svg>  
         {/* 이미지 호버 */}
