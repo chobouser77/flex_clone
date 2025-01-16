@@ -193,6 +193,7 @@
   padding: 12px 10px;
   box-sizing: border-box;
   height: 170px; width: 53px;
+  z-index: 40;
   p.w {
     font-size: 28px;
     color: #000;
@@ -202,8 +203,7 @@
     color: #000;
     rotate: -90deg;
     margin-bottom: 16px;
-  }
-
+  }  
 }
 .rignt-fixed {
   position: fixed; bottom: 30px; right: 30px;
