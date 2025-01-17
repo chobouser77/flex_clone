@@ -5,6 +5,7 @@ import Header from './fixed';
 import Footer from './footer';
 import Section1 from './section1';
 import Section2 from './section2';
+import Section3 from './section3';
 import Intro from './intro';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Header />
       <Section1 />
       <Section2 />
+      <Section3 />
       <Footer />
     </>
   );
