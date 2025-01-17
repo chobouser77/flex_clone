@@ -370,3 +370,59 @@
     } 
   }
 }
+.section5 {
+  height: 100vh ;
+  background-color: #ffffff; 
+  padding: 0;  
+  overflow: hidden;
+  .horizontal {
+    background-color: #ffffff;
+    display: flex;
+    height: 100vh;
+    // overflow-x: scroll;
+    .ho-section {
+      width: 1900px;
+      height: 100%;
+      box-sizing: border-box;
+      &.ho-s1 {
+        padding: 36px;
+        display: flex;
+        .ho-s1-left {
+          width: 100%;
+          flex-direction: column;
+          margin-top: 300px;
+          p {
+            font-size: 200px;
+            span {
+              color: #3EFF3E;
+            }
+          }
+          .mg {
+            margin-left: 50px;
+          }
+        }
+        .ho-s1-right {
+          width: 100%;
+          display: flex; flex-direction: column;
+          gap: 75px;
+          .s1-r-t {
+            display: flex;flex-direction: column;
+            p {
+              font-size: 40px;
+              font-weight: 600;
+              span {
+                color: #3EFF3E;
+              }
+            }
+          }
+          .s1-r-b {
+            display: flex; flex-direction: column;
+            p {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
