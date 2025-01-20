@@ -11,6 +11,7 @@ function Section5() {
   const hoS3Ref = useRef(null);
   const hoS5Ref = useRef(null);
   const [horizontalScrollHeight, setHorizontalScrollHeight] = useState(0);
+  const viewH = window.innerHeight ; 
 
   useEffect(() => {
     const element = horizontalSection.current;
@@ -18,8 +19,7 @@ function Section5() {
     if (!element) return;
 
     const scrollWidth = element.scrollWidth;
-    const viewportWidth = window.innerWidth;
-    const viewH = window.innerHeight / 2;
+    const viewportWidth = window.innerWidth;    
     const calculatedHorizontalScrollHeight = scrollWidth - viewportWidth;
     const totalHeight = calculatedHorizontalScrollHeight + window.innerHeight * 2;
 
@@ -78,7 +78,7 @@ function Section5() {
         start: "370%",
         end: "420%", 
         scrub: true,
-        markers: true, 
+        // markers: true, 
       },
     })
     .set(hoS5Images, { opacity: 0 }) 
@@ -193,7 +193,7 @@ function Section5() {
         </div>
       </div>   
       {/* 상태 값 사용 */}
-      <div className="s5-null" style={{ height: `${horizontalScrollHeight}px` }}></div>
+      <div className="s5-null" style={{ height: `${horizontalScrollHeight - viewH * 2 - 250}px` }}></div>
     </>
   );
 }

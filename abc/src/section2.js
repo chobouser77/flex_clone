@@ -12,7 +12,6 @@ function Section2() {
   const pathRef = useRef(null);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const targetElementRef = useRef(null);
-  const cursorSize = 50;
   
   const handleScroll = () => {
     const scrollY = window.scrollY;
